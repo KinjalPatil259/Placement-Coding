@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+    int n,a[10],target,found=0;
+
+    printf("eneter size of the array=");
+    scanf("%d",&n);
+
+    printf("enter elements of the array");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter target=");
+    scanf("%d",&target);
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(a[i]+a[j]==target)
+            {
+                printf("%d+%d=%d",a[i],a[j],target);
+                printf("indexes are %d and %d",i,j);
+                found=1;
+                break;
+            }
+        }
+        if(found==1)
+        {
+            break;
+        }
+    }
+
+    if(found==0)
+    {
+        printf("no pair found ");
+    }
+    return 0;
+}
+
